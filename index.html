@@ -22,7 +22,12 @@
     <nav id="navbar">
         <div class="nav-container container">
             <div class="term-logo">Efekan Çelik</div>
-            <ul class="nav-links">
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#about">01.Hakkımda</a></li>
                 <li><a href="#experience">02.Deneyim</a></li>
                 <li><a href="#education">03.Eğitim</a></li>
@@ -256,6 +261,23 @@
             </div>
         </footer>
     </main>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
