@@ -1,283 +1,558 @@
 <!DOCTYPE html>
-<html lang="tr">
-
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Efekan Çelik | Yazılım Mühendisi</title>
-    <meta name="description" content="Efekan Çelik - Yazılım Mühendisliği Öğrencisi. Python, Django ve Yapay Zekâ.">
+    <title>Efekan Çelik | Software Engineer</title>
+    <meta name="description" content="Efekan Çelik — Software Engineering student at Ankara University. Backend, AI/ML, and distributed systems.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
-<body class="light-theme">
-    <div class="scanline"></div>
-    <div class="crt-overlay"></div>
+<body>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
 
     <nav id="navbar">
         <div class="nav-container container">
-            <div class="term-logo">Efekan Çelik</div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <div class="term-logo"><span class="logo-bracket">&lt;</span>efekan<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span></div>
+            <div class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#about">01.Hakkımda</a></li>
-                <li><a href="#experience">02.Deneyim</a></li>
-                <li><a href="#education">03.Eğitim</a></li>
-                <li><a href="#projects">04.Projeler</a></li>
-                <li><a href="#skills">05.Yetenekler</a></li>
-                <li><a href="#contact">06.İletişim</a></li>
+                <li><a href="#about" data-i18n="nav-about">about</a></li>
+                <li><a href="#experience" data-i18n="nav-experience">experience</a></li>
+                <li><a href="#projects" data-i18n="nav-projects">projects</a></li>
+                <li><a href="#publications" data-i18n="nav-publications">publications</a></li>
+                <li><a href="#skills" data-i18n="nav-skills">skills</a></li>
+                <li><a href="#contact" class="nav-cta" data-i18n="nav-contact">contact</a></li>
             </ul>
+            <div class="nav-controls">
+                <button class="ctrl-btn lang-toggle" id="lang-toggle" title="Switch language" aria-label="Switch language">
+                    <span class="lang-label">TR</span>
+                </button>
+                <button class="ctrl-btn theme-toggle" id="theme-toggle" title="Switch theme" aria-label="Switch theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
     <main class="container">
+        <!-- HERO -->
         <header id="home" class="hero section">
             <div class="hero-grid">
-                <div class="hero-image">
-                    <img src="linkedinpp.jpeg" alt="Efekan Çelik" class="profile-img">
+                <div class="hero-image-wrap">
+                    <div class="hero-img-glow"></div>
+                    <img src="linkedinpp.jpeg" alt="Efekan Celik" class="profile-img">
+                    <div class="status-badge"><span class="status-dot"></span><span data-i18n="status">Open to opportunities</span></div>
                 </div>
                 <div class="hero-info">
-                    <h1 class="hero-title">> Efekan Çelik</h1>
-                    <p class="role">Yazılım Mühendisliği Öğrencisi // Ankara Üniversitesi</p>
-                    <p class="hero-intro">Merhaba, ben Efekan. Ankara Üniversitesi Yazılım Mühendisliği öğrencisiyim.
-                        Benimle ilgili daha fazla bilgi edinmek için CV'mi inceleyebilirsiniz.</p>
+                    <p class="hero-greeting" data-i18n="hero-greeting">Hi, I'm</p>
+                    <h1 class="hero-title">Efekan Çelik</h1>
+                    <div class="hero-role-wrap">
+                        <span class="role-prefix">~$&nbsp;</span>
+                        <span class="hero-typed" id="typed-text"></span>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                    <p class="hero-intro">
+                        <span data-i18n="hero-intro">Software Engineering student at <strong>Ankara University</strong>, focused on scalable backend systems, applied AI/ML, and distributed architectures. I build things that ship — from microservices to ML models to IEEE-published research.</span>
+                    </p>
                     <div class="hero-actions">
-                        <a href="EFEKANCELIK-1.pdf" download class="btn-terminal">CV'mi görmek için tıklayınız.</a>
+                        <a href="https://github.com/efekanclk" target="_blank" class="btn-primary"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://linkedin.com/in/efekan-celik" target="_blank" class="btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item"><span class="stat-num">4+</span><span class="stat-label" data-i18n="stat-internships">internships</span></div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item"><span class="stat-num">6+</span><span class="stat-label" data-i18n="stat-projects">projects</span></div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item"><span class="stat-num">1</span><span class="stat-label" data-i18n="stat-paper">IEEE paper</span></div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item"><span class="stat-num">3rd</span><span class="stat-label">TEKNOFEST</span></div>
                     </div>
                 </div>
             </div>
         </header>
 
+        <!-- ABOUT -->
         <section id="about" class="section">
-            <h2 class="section-title">01. Hakkımda</h2>
-            <div class="term-box">
-                <p>
-                    Merhaba, ben Efekan Çelik. Ankara Üniversitesi Yazılım Mühendisliği bölümü 3. sınıf öğrencisiyim.
-                    Küçük
-                    yaşlardan itibaren kurduğum bilgisayar mühendisi olma hayalimi gerçeğe
-                    dönüştürmek için çalışıyorum. İyi bir yazılımcı olma yolunda çeşitli projelerde
-                    yer alıyor, eğitimler ve seminerlerle kendimi sürekli geliştiriyorum.
-                </p>
-                <p>
-                    Şu an özellikle yapay zeka ve veri bilimi alanlarına odaklanırken, aynı zamanda kullanıcı dostu web
-                    siteleri geliştirerek bu alandaki yetkinliğimi artırıyorum.
+            <h2 class="section-title"><span class="title-num">01.</span> <span data-i18n="about-title">About Me</span></h2>
+            <div class="about-grid">
+                <div class="about-text glass-card">
+                    <p data-i18n="about-p1">I'm a software engineering student at <strong>Ankara University</strong> (GPA 3.25/4.00, expected 2027), with a passion for building scalable backend systems and applying AI/ML in real-world contexts.</p>
+                    <p data-i18n="about-p2">My work spans Spring-based microservice architectures, PyTorch-powered deep learning models, and full-stack web applications. I've collaborated across teams at <strong>Turkcell</strong>, <strong>GreyCollar</strong>, and research labs — always shipping production-grade code.</p>
+                    <p data-i18n="about-p3">Beyond engineering, I placed third nationally at <strong>TEKNOFEST 2025</strong> in the 5G Positioning challenge, published in <strong>IEEE</strong>, and won first place at <strong>DATA LEAGUE'26</strong> datathon out of 72 teams.</p>
+                </div>
+                <div class="about-edu glass-card">
+                    <div class="edu-header"><i class="fas fa-graduation-cap edu-icon"></i><h3 data-i18n="edu-title">Education</h3></div>
+                    <div class="edu-entry">
+                        <div class="edu-school">Ankara University</div>
+                        <div class="edu-degree" data-i18n="edu-degree">B.Sc. Software Engineering</div>
+                        <div class="edu-meta">
+                            <span><i class="far fa-calendar"></i> Sep 2023 — Jul 2027</span>
+                            <span class="gpa-badge">GPA 3.25 / 4.00</span>
+                        </div>
+                    </div>
+                    <div class="edu-badges">
+                        <span class="edu-tag">YÖKDİL B2 — 77.5</span>
+                        <span class="edu-tag">ALES Sayısal — 81</span>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- EXPERIENCE -->
         <section id="experience" class="section">
-            <h2 class="section-title">02. Deneyim</h2>
-            <div class="experience-tree">
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-role">Gönüllü Stajyer</span>
-                        <span class="exp-date">@ 2026.01 - 2026.02</span>
+            <h2 class="section-title"><span class="title-num">02.</span> <span data-i18n="exp-title">Experience</span></h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"><div class="marker-dot"></div><div class="marker-line"></div></div>
+                    <div class="timeline-card glass-card">
+                        <div class="tc-header">
+                            <div><h3 class="tc-role" data-i18n="exp1-role">Software Engineer Intern</h3><p class="tc-company">Turkcell</p></div>
+                            <div class="tc-meta"><span class="tc-date">Jul 2026 — Aug 2026</span><span class="tc-loc"><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp1-loc">Istanbul, Turkey</span></span></div>
+                        </div>
+                        <ul class="tc-points">
+                            <li data-i18n="exp1-b1">Built an Oracle DB-backed centralised configuration server for microservice environments, eliminating file-based config dependency.</li>
+                            <li data-i18n="exp1-b2">Designed an async push-based refresh mechanism propagating config changes to all bound microservices without restarts.</li>
+                        </ul>
+                        <div class="tc-tags"><span>Spring Boot</span><span>Spring Cloud</span><span>Oracle DB</span><span>Docker</span><span>Hibernate Envers</span></div>
                     </div>
-                    <p class="exp-company">> GreyCollar (Uzaktan)</p>
-                    <ul class="exp-points">
-                        <li>Uygulama performansını ve logları anlık takip edebilmek için ELK Stack (Elasticsearch,
-                            Kibana) ve Grafana tabanlı uçtan uca izleme sistemini deneyimledim.</li>
-                        <li>Açık kaynaklı n8n platformunu kullanarak, Google MCP'leri ve GreyCollar API'si arasında veri
-                            akışını sağlayan entegre bir otomasyon senaryosu (PoC) geliştirdim.</li>
-                        <li>İstemci ve sunucu arasında, verilerin anlık ve düşük gecikmeyle aktarılmasını sağlayan
-                            event-driven (olay güdümlü) sistem mimarileri üzerinde çalışma deneyimi kazandım.</li>
-                    </ul>
                 </div>
 
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-role">Teknik Ekip Üyesi</span>
-                        <span class="exp-date">@ 2025.03 - 2025.09</span>
+                <div class="timeline-item">
+                    <div class="timeline-marker"><div class="marker-dot"></div><div class="marker-line"></div></div>
+                    <div class="timeline-card glass-card">
+                        <div class="tc-header">
+                            <div><h3 class="tc-role" data-i18n="exp2-role">Software Engineer Intern</h3><p class="tc-company">GreyCollar</p></div>
+                            <div class="tc-meta"><span class="tc-date">Jan 2026 — Feb 2026</span><span class="tc-loc"><i class="fas fa-globe"></i> <span data-i18n="exp2-loc">Remote · Georgia, USA</span></span></div>
+                        </div>
+                        <ul class="tc-points">
+                            <li data-i18n="exp2-b1">Designed and implemented test scenarios for an autonomous AI agent platform for workforce management.</li>
+                            <li data-i18n="exp2-b2">Measured LLM-based system output consistency and contributed to performance reporting pipelines.</li>
+                            <li data-i18n="exp2-b3">Gained experience with event-driven architectures and real-time data streaming principles.</li>
+                        </ul>
+                        <div class="tc-tags"><span>LLM Agents</span><span>ELK Stack</span><span>n8n</span><span>Event-Driven</span></div>
                     </div>
-                    <p class="exp-company">> HSD Ankara Üniversitesi</p>
-                    <ul class="exp-points">
-                        <li>Topluluk teknik süreç yönetimi ve etkinlik organizasyonları.</li>
-                    </ul>
                 </div>
 
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-role">Frontend Stajyeri</span>
-                        <span class="exp-date">@ 2024.07 - 2024.08</span>
+                <div class="timeline-item">
+                    <div class="timeline-marker"><div class="marker-dot"></div><div class="marker-line"></div></div>
+                    <div class="timeline-card glass-card">
+                        <div class="tc-header">
+                            <div><h3 class="tc-role" data-i18n="exp3-role">Technical Lead</h3><p class="tc-company">HSD Ankara University</p></div>
+                            <div class="tc-meta"><span class="tc-date">Mar 2025 — Sep 2025</span><span class="tc-loc"><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp3-loc">Ankara, Turkey</span></span></div>
+                        </div>
+                        <ul class="tc-points">
+                            <li data-i18n="exp3-b1">Managed community technical processes and led event infrastructure and presentation systems setup.</li>
+                            <li data-i18n="exp3-b2">Coordinated digital content management and event planning activities.</li>
+                        </ul>
+                        <div class="tc-tags"><span data-i18n="tag-leadership">Leadership</span><span data-i18n="tag-techman">Technical Management</span></div>
                     </div>
-                    <p class="exp-company">> DivvyDrive (Uzaktan)</p>
-                    <ul class="exp-points">
-                        <li>HTML5, CSS3 ve JS ile arayüz geliştirme süreçleri.</li>
-                    </ul>
                 </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"><div class="marker-dot"></div></div>
+                    <div class="timeline-card glass-card">
+                        <div class="tc-header">
+                            <div><h3 class="tc-role" data-i18n="exp4-role">Software Engineer Intern</h3><p class="tc-company">DivvyDrive</p></div>
+                            <div class="tc-meta"><span class="tc-date">Jul 2024 — Aug 2024</span><span class="tc-loc"><i class="fas fa-globe"></i> <span data-i18n="exp4-loc">Remote · Ankara, Turkey</span></span></div>
+                        </div>
+                        <ul class="tc-points">
+                            <li data-i18n="exp4-b1">Developed modular web components to enhance user interaction and interface responsiveness.</li>
+                            <li data-i18n="exp4-b2">Delivered a consistent, responsive UX across multiple screen sizes.</li>
+                        </ul>
+                        <div class="tc-tags"><span>React</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span></div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <section id="education" class="section">
-            <h2 class="section-title">03. Eğitim</h2>
-            <div class="term-box">
-                <div class="edu-item">
-                    <h3>Ankara Üniversitesi</h3>
-                    <p class="edu-detail">Yazılım Mühendisliği | 2023 — Devam</p>
-                    <p class="edu-stats">GANO: 3.24 / 4.00</p>
-                </div>
-            </div>
-        </section>
-
+        <!-- PROJECTS -->
         <section id="projects" class="section">
-            <h2 class="section-title">04. Projeler</h2>
+            <h2 class="section-title"><span class="title-num">03.</span> <span data-i18n="proj-title">Projects</span></h2>
             <div class="projects-grid">
-                <div class="project-box">
-                    <h3>Makine Öğrenmesi ile Ağ Saldırı Tespiti (ML-IDS)</h3>
-                    <p class="project-tags">Python, PyTorch, Scikit-learn, Matplotlib</p>
-                    <ul class="exp-points">
-                        <li>Ağ trafiği üzerinden anomali ve siber saldırı tespit eden yapay zeka modeli geliştiriildi.
-                        </li>
-                        <li>CICIDS2017 vb. veri setleri üzerinde XGBoost, Random Forest ve CNN-LSTM modelleri eğitildi.
-                        </li>
-                    </ul>
+
+                <div class="project-card glass-card featured">
+                    <div class="pc-top"><span class="pc-badge" data-i18n="badge-featured">Featured</span><div class="pc-links"><a href="https://github.com/efekanclk/spring-cloud-config-oracle-demo" target="_blank"><i class="fab fa-github"></i></a></div></div>
+                    <h3 data-i18n="p1-title">Spring Cloud Config — Oracle DB Demo</h3>
+                    <p data-i18n="p1-desc">Enterprise-grade centralised config management for microservices. Async push-based config refresh propagates changes to all bound services without restarts. Built during Turkcell internship.</p>
+                    <div class="pc-tags"><span>Spring Boot</span><span>Spring Cloud</span><span>Oracle DB</span><span>Docker</span><span>Hibernate Envers</span></div>
                 </div>
 
-                <div class="project-box">
-                    <h3>TEKNOFEST 2025 — 5G Konumlandırma Yarışması</h3>
-                    <p class="project-tags">Python, PyTorch, Scikit-learn, Pandas, NumPy</p>
-                    <ul class="exp-points">
-                        <li>“5Gordion” takımıyla 5G Konumlandırma Yarışması’nda <strong>Türkiye 3.’sü</strong> olduk.
-                        </li>
-                        <li>Yarışma kapsamında 5G sinyalleriyle hassas konum tahmini yapan hibrit bir model geliştirldi.
-                        </li>
-                        <li>Veri işleme, model testleri ve proje dokümantasyon süreçlerinde aktif rol aldım.</li>
-                    </ul>
+                <div class="project-card glass-card featured">
+                    <div class="pc-top"><span class="pc-badge" data-i18n="badge-live">Live</span><div class="pc-links"><a href="https://cvlangelo.com" target="_blank"><i class="fas fa-external-link-alt"></i></a><a href="https://github.com/oralet86/cvlangelo" target="_blank"><i class="fab fa-github"></i></a></div></div>
+                    <h3>cvlangelo.com</h3>
+                    <p data-i18n="p2-desc">AI-powered CV personalisation platform. Semantic search matches candidate experience to job listings. LangChain pipeline generates tailored CV text. Deployed and live.</p>
+                    <div class="pc-tags"><span>FastAPI</span><span>React</span><span>MongoDB</span><span>LangChain</span><span>vLLM</span><span>Docker</span></div>
                 </div>
 
-                <div class="project-box">
-                    <h3>becayisbul.com</h3>
-                    <p class="project-tags">React, JavaScript, HTML5, CSS3</p>
-                    <ul class="exp-points">
-                        <li>KYK yurtları için becayiş (yer değiştirme) eşleştirmesi yapan platformda frontend
-                            geliştirdim.</li>
-                        <li>React ile modern arayüzler tasarladım.</li>
-                        <li>Uygulamanın MVP sürümü tamamlandı. Becayiş sistemi GSB tarafından kaldırıldığı için
-                            geliştirme sürecine son verildi.</li>
-                    </ul>
+                <div class="project-card glass-card">
+                    <div class="pc-top"><span class="pc-badge" data-i18n="badge-research">Research</span><div class="pc-links"><a href="https://github.com/efekanclk/Audiometer" target="_blank"><i class="fab fa-github"></i></a></div></div>
+                    <h3>Odyometre</h3>
+                    <p data-i18n="p3-desc">Multidisciplinary clinical audiometry project across Ankara University faculties. Serial protocol between Java-based clinical software and Arduino/Proteus hardware layer.</p>
+                    <div class="pc-tags"><span>Java (Swing)</span><span>Arduino</span><span>Proteus</span><span>SPI</span><span>jSerialComm</span></div>
                 </div>
 
-                <div class="project-box" style="display: flex; flex-direction: column;">
-                    <h3>TÜBİTAK 2209-A Araştırma Projesi (KurbanLink)</h3>
-                    <p class="project-tags">Django, REST Framework, MySQL</p>
-                    <ul class="exp-points" style="flex-grow: 1;">
-                        <li>Kurban alım-satımı, mesajlaşma ve kasap randevu özellikleri sunan marketplace geliştirdim.
-                        </li>
-                        <li>Django REST Framework ile JWT Auth, rol yetkilendirmesi ve öneri motoru entegre ettim.</li>
-                        <li>Projeyi AWS Lightsail'da Nginx + Gunicorn ile canlıya aldım ve CI/CD süreçlerini kurdum.
-                        </li>
-                    </ul>
-                    <a href="https://kurbanlink.com" target="_blank" class="btn-terminal"
-                        style="margin-top: 1rem; text-align: center; display: block; font-size: 0.9rem;">
-                        <i class="fas fa-external-link-alt"></i> Tıklayarak siteye gidebilirsiniz
-                    </a>
+                <div class="project-card glass-card">
+                    <div class="pc-top"><span class="pc-badge">TÜBİTAK 2209-A</span><div class="pc-links"><a href="https://github.com/efekanclk/KurbanLink" target="_blank"><i class="fab fa-github"></i></a></div></div>
+                    <h3>KurbanLink</h3>
+                    <p data-i18n="p4-desc">Full-stack livestock marketplace with listings, messaging, and vet appointment scheduling. Role-based auth, recommendation engine, AWS Lightsail deployment with CI/CD.</p>
+                    <div class="pc-tags"><span>Django</span><span>REST Framework</span><span>MySQL</span><span>AWS</span><span>GitHub Actions</span></div>
                 </div>
+
+                <div class="project-card glass-card">
+                    <div class="pc-top"><span class="pc-badge">AI/ML</span><div class="pc-links"><a href="https://github.com/efekanclk/ml-ids" target="_blank"><i class="fab fa-github"></i></a></div></div>
+                    <h3 data-i18n="p5-title">ML-IDS — Network Intrusion Detection</h3>
+                    <p data-i18n="p5-desc">AI-based anomaly and cyber-attack detection on network traffic. XGBoost, CatBoost, and CNN-LSTM models evaluated with Precision-Recall and F1-Score metrics.</p>
+                    <div class="pc-tags"><span>PyTorch</span><span>Scikit-learn</span><span>XGBoost</span><span>CatBoost</span><span>Matplotlib</span></div>
+                </div>
+
             </div>
         </section>
 
+        <!-- PUBLICATIONS & COMPETITIONS -->
+        <section id="publications" class="section">
+            <h2 class="section-title"><span class="title-num">04.</span> <span data-i18n="pub-title">Publications &amp; Competitions</span></h2>
+            <div class="pub-grid">
+
+                <div class="pub-card glass-card pub-highlight">
+                    <div class="pub-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="pub-content">
+                        <span class="pub-venue">IEEE · June 2026</span>
+                        <h3 data-i18n="ieee-title">Hybrid Deep Learning for 5G Positioning: Integrating Map-Derived Environmental Features with GAT-GRU-Attention</h3>
+                        <p data-i18n="ieee-desc">End-to-end 5G positioning architecture integrating map-based obstacle score features with a GAT-GRU-Attention (GGA) hybrid model. Achieved <strong>R² = 0.9805</strong> and <strong>21.26 m MAE</strong> in open-area scenarios.</p>
+                        <a href="https://ieeexplore.ieee.org/document/11605042" target="_blank" class="pub-link">IEEE Xplore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="comp-card glass-card">
+                    <div class="comp-rank">🥉 <span data-i18n="rank-3rd">3rd Place</span></div>
+                    <h3>TEKNOFEST 2025 — 5G Positioning</h3>
+                    <p data-i18n="c1-desc">Competed as "5Gordion" team member nationally. Developed a hybrid GAT-GRU-Attention model combining 5G signal measurements with map-derived environmental data.</p>
+                    <span class="comp-org" data-i18n="c1-org">T.C. Ministry of Industry and Technology · Sep 2025</span>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <!-- SKILLS -->
         <section id="skills" class="section">
-            <h2 class="section-title">05. Yetenekler</h2>
-            <div class="skills-visual-grid">
-                <div class="skill-area">
-                    <h3>Programlama Dilleri</h3>
-                    <div class="skill-items">
-                        <div class="skill-card"><i class="devicon-python-plain colored"></i><span>Python</span></div>
-                        <div class="skill-card"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+            <h2 class="section-title"><span class="title-num">05.</span> <span data-i18n="skills-title">Skills</span></h2>
+            <div class="skills-layout">
+                <div class="skill-group glass-card">
+                    <h3><i class="fas fa-code"></i> <span data-i18n="sk-languages">Languages</span></h3>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><i class="devicon-python-plain colored"></i> Python</div>
+                        <div class="skill-chip"><i class="devicon-java-plain colored"></i> Java</div>
+                        <div class="skill-chip"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                        <div class="skill-chip">SQL</div>
                     </div>
                 </div>
-                <div class="skill-area">
-                    <h3>Yapay Zekâ & Veri Bilimi</h3>
-                    <div class="skill-items">
-                        <div class="skill-card"><i class="devicon-pytorch-original colored"></i><span>PyTorch</span>
-                        </div>
-                        <div class="skill-card"><i class="devicon-pandas-plain colored"></i><span>Pandas</span></div>
-                        <div class="skill-card"><i class="devicon-numpy-plain colored"></i><span>NumPy</span></div>
-                        <div class="skill-card"><i class="devicon-matplotlib-plain colored"></i><span>Matplotlib</span>
-                        </div>
+                <div class="skill-group glass-card">
+                    <h3><i class="fas fa-server"></i> <span data-i18n="sk-backend">Backend &amp; Frameworks</span></h3>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><i class="devicon-spring-plain colored"></i> Spring</div>
+                        <div class="skill-chip"><i class="devicon-fastapi-plain colored"></i> FastAPI</div>
+                        <div class="skill-chip"><i class="devicon-django-plain colored"></i> Django</div>
+                        <div class="skill-chip"><i class="devicon-react-original colored"></i> React</div>
                     </div>
                 </div>
-                <div class="skill-area">
-                    <h3>Web & Backend</h3>
-                    <div class="skill-items">
-                        <div class="skill-card"><i class="devicon-django-plain colored"></i><span>Django</span></div>
-                        <div class="skill-card"><i class="devicon-react-original colored"></i><span>React</span></div>
-                        <div class="skill-card"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
-                        <div class="skill-card"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span>
-                        </div>
+                <div class="skill-group glass-card">
+                    <h3><i class="fas fa-brain"></i> AI / ML</h3>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><i class="devicon-pytorch-original colored"></i> PyTorch</div>
+                        <div class="skill-chip"><i class="devicon-scikitlearn-plain colored"></i> Scikit-learn</div>
+                        <div class="skill-chip"><i class="devicon-pandas-plain colored"></i> Pandas</div>
+                        <div class="skill-chip"><i class="devicon-numpy-plain colored"></i> NumPy</div>
                     </div>
                 </div>
-                <div class="skill-area">
-                    <h3>Araçlar & DevOps</h3>
-                    <div class="skill-items">
-                        <div class="skill-card"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-                        <div class="skill-card"><i class="devicon-github-original"></i><span>GitHub</span></div>
-                        <div class="skill-card"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
-                        <div class="skill-card"><i class="devicon-linux-plain"></i><span>Linux</span></div>
-
+                <div class="skill-group glass-card">
+                    <h3><i class="fas fa-database"></i> <span data-i18n="sk-databases">Databases</span></h3>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><i class="devicon-oracle-original colored"></i> Oracle</div>
+                        <div class="skill-chip"><i class="devicon-mysql-plain colored"></i> MySQL</div>
+                        <div class="skill-chip"><i class="devicon-mongodb-plain colored"></i> MongoDB</div>
+                        <div class="skill-chip"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
                     </div>
                 </div>
-                <div class="skill-area">
-                    <h3>Diller</h3>
-                    <ul class="exp-points" style="margin-top: 1rem;">
-                        <li><strong
-                                style="font-family: 'Fira Code', monospace; color: var(--text-main);">Türkçe</strong>
-                            (Anadil)</li>
-                        <li style="margin-top: 1rem;"><strong
-                                style="font-family: 'Fira Code', monospace; color: var(--term-blue);">İngilizce</strong><br><span
-                                style="font-size: 0.85rem; color: var(--term-dim);">B2 Seviye (YÖKDİL: 77.5)</span></li>
-                    </ul>
+                <div class="skill-group glass-card">
+                    <h3><i class="fas fa-tools"></i> DevOps &amp; Tools</h3>
+                    <div class="skill-chips">
+                        <div class="skill-chip"><i class="devicon-docker-plain colored"></i> Docker</div>
+                        <div class="skill-chip"><i class="devicon-git-plain colored"></i> Git</div>
+                        <div class="skill-chip"><i class="devicon-github-original"></i> GitHub Actions</div>
+                        <div class="skill-chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS</div>
+                    </div>
+                </div>
+                <div class="skill-group glass-card">
+                    <h3><i class="fas fa-language"></i> <span data-i18n="sk-langs">Human Languages</span></h3>
+                    <div class="skill-chips">
+                        <div class="skill-chip lang-chip">🇹🇷 <span data-i18n="lang-tr">Turkish</span> <span class="lang-level" data-i18n="lang-native">Native</span></div>
+                        <div class="skill-chip lang-chip">🇬🇧 <span data-i18n="lang-en">English</span> <span class="lang-level">B2 Professional</span></div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- CONTACT -->
         <footer id="contact" class="section">
-            <h2 class="section-title">06. İletişim</h2>
-            <div class="term-box">
-                <div class="contact-methods">
-                    <a href="mailto:efecelik4207@gmail.com" class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>efecelik4207@gmail.com</span>
-                    </a>
-                    <a href="tel:+905531372139" class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>0553 137 2139</span>
-                    </a>
-                    <a href="https://github.com/efekanclk" target="_blank" class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <span>github.com/efekanclk</span>
-                    </a>
+            <h2 class="section-title"><span class="title-num">06.</span> <span data-i18n="contact-title">Get In Touch</span></h2>
+            <div class="contact-wrap glass-card">
+                <div class="contact-left">
+                    <h3 data-i18n="contact-headline">Let's build something great.</h3>
+                    <p data-i18n="contact-sub">Whether it's a collaboration, internship offer, or just a hello — my inbox is open.</p>
                 </div>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/efekan-celik" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/efekanclk" target="_blank"><i class="fab fa-github"></i></a>
+                <div class="contact-right">
+                    <a href="mailto:efecelik4207@gmail.com" class="contact-row"><div class="cr-icon"><i class="fas fa-envelope"></i></div><span>efecelik4207@gmail.com</span></a>
+                    <a href="https://github.com/efekanclk" target="_blank" class="contact-row"><div class="cr-icon"><i class="fab fa-github"></i></div><span>github.com/efekanclk</span></a>
+                    <a href="https://linkedin.com/in/efekan-celik" target="_blank" class="contact-row"><div class="cr-icon"><i class="fab fa-linkedin"></i></div><span>linkedin.com/in/efekan-celik</span></a>
                 </div>
             </div>
+            <p class="footer-note" data-i18n="footer">Designed &amp; built by Efekan Çelik · 2026</p>
         </footer>
     </main>
+
     <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
+    // ── I18N ──────────────────────────────────────────────────────────────────
+    const translations = {
+        en: {
+            "nav-about": "about",
+            "nav-experience": "experience",
+            "nav-projects": "projects",
+            "nav-publications": "publications",
+            "nav-skills": "skills",
+            "nav-contact": "contact",
+            "status": "Open to opportunities",
+            "hero-greeting": "Hi, I'm",
+            "hero-intro": "Software Engineering student at <strong>Ankara University</strong>, focused on scalable backend systems, applied AI/ML, and distributed architectures. I build things that ship — from microservices to ML models to IEEE-published research.",
+            "stat-internships": "internships",
+            "stat-projects": "projects",
+            "stat-paper": "IEEE paper",
+            "about-title": "About Me",
+            "about-p1": "I'm a software engineering student at <strong>Ankara University</strong> (GPA 3.25/4.00, expected 2027), with a passion for building scalable backend systems and applying AI/ML in real-world contexts.",
+            "about-p2": "My work spans Spring-based microservice architectures, PyTorch-powered deep learning models, and full-stack web applications. I've collaborated across teams at <strong>Turkcell</strong>, <strong>GreyCollar</strong>, and research labs — always shipping production-grade code.",
+            "about-p3": "Beyond engineering, our team placed third nationally at <strong>TEKNOFEST 2025</strong> in the 5G Positioning challenge and published in <strong>IEEE</strong>.",
+            "edu-title": "Education",
+            "edu-degree": "B.Sc. Software Engineering",
+            "exp-title": "Experience",
+            "exp1-role": "Software Engineer Intern",
+            "exp1-loc": "Istanbul, Turkey",
+            "exp1-b1": "Built an Oracle DB-backed centralised configuration server for microservice environments, eliminating file-based config dependency.",
+            "exp1-b2": "Designed an async push-based refresh mechanism propagating config changes to all bound microservices without restarts.",
+            "exp2-role": "Software Engineer Intern",
+            "exp2-loc": "Remote · Georgia, USA",
+            "exp2-b1": "Designed and implemented test scenarios for an autonomous AI agent platform for workforce management.",
+            "exp2-b2": "Measured LLM-based system output consistency and contributed to performance reporting pipelines.",
+            "exp2-b3": "Gained experience with event-driven architectures and real-time data streaming principles.",
+            "exp3-role": "Technical Lead",
+            "exp3-loc": "Ankara, Turkey",
+            "exp3-b1": "Managed community technical processes and led event infrastructure and presentation systems setup.",
+            "exp3-b2": "Coordinated digital content management and event planning activities.",
+            "exp4-role": "Software Engineer Intern",
+            "exp4-loc": "Remote · Ankara, Turkey",
+            "exp4-b1": "Developed modular web components to enhance user interaction and interface responsiveness.",
+            "exp4-b2": "Delivered a consistent, responsive UX across multiple screen sizes.",
+            "tag-leadership": "Leadership",
+            "tag-techman": "Technical Management",
+            "proj-title": "Projects",
+            "badge-featured": "Featured",
+            "badge-live": "Live",
+            "badge-research": "Research",
+            "p1-title": "Spring Cloud Config — Oracle DB Demo",
+            "p1-desc": "Enterprise-grade centralised config management for microservices. Async push-based config refresh propagates changes to all bound services without restarts. Built during Turkcell internship.",
+            "p2-desc": "AI-powered CV personalisation platform. Semantic search matches candidate experience to job listings. LangChain pipeline generates tailored CV text. Deployed and live.",
+            "p3-desc": "Multidisciplinary clinical audiometry project across Ankara University faculties. Serial protocol between Java-based clinical software and Arduino/Proteus hardware layer.",
+            "p4-desc": "Full-stack livestock marketplace with listings, messaging, and vet appointment scheduling. Role-based auth, recommendation engine, AWS Lightsail deployment with CI/CD.",
+            "p5-title": "ML-IDS — Network Intrusion Detection",
+            "p5-desc": "AI-based anomaly and cyber-attack detection on network traffic. XGBoost, CatBoost, and CNN-LSTM models evaluated with Precision-Recall and F1-Score metrics.",
+            "rank-1st": "1st Place",
+            "rank-3rd": "3rd Place",
+            "pub-title": "Publications & Competitions",
+            "ieee-title": "Hybrid Deep Learning for 5G Positioning: Integrating Map-Derived Environmental Features with GAT-GRU-Attention",
+            "ieee-desc": "End-to-end 5G positioning architecture integrating map-based obstacle score features with a GAT-GRU-Attention (GGA) hybrid model. Achieved <strong>R² = 0.9805</strong> and <strong>21.26 m MAE</strong> in open-area scenarios.",
+            "c1-desc": "Competed as \"5Gordion\" team member nationally. Developed a hybrid GAT-GRU-Attention model combining 5G signal measurements with map-derived environmental data.",
+            "c1-org": "T.C. Ministry of Industry and Technology · Sep 2025",
+            "skills-title": "Skills",
+            "sk-languages": "Languages",
+            "sk-backend": "Backend & Frameworks",
+            "sk-databases": "Databases",
+            "sk-langs": "Human Languages",
+            "lang-tr": "Turkish",
+            "lang-en": "English",
+            "lang-native": "Native",
+            "contact-title": "Get In Touch",
+            "contact-headline": "Let's build something great.",
+            "contact-sub": "Whether it's a collaboration, internship offer, or just a hello — my inbox is open.",
+            "footer": "Designed & built by Efekan Çelik · 2026",
+            "typed-roles": ["Software Engineer", "Backend Developer", "AI/ML Enthusiast", "IEEE Author", "Open Source Contributor"]
+        },
+        tr: {
+            "nav-about": "hakkımda",
+            "nav-experience": "deneyim",
+            "nav-projects": "projeler",
+            "nav-publications": "yayınlar",
+            "nav-skills": "yetenekler",
+            "nav-contact": "iletişim",
+            "status": "Fırsatlara açığım",
+            "hero-greeting": "Merhaba, ben",
+            "hero-intro": "<strong>Ankara Üniversitesi</strong> Yazılım Mühendisliği öğrencisiyim. Ölçeklenebilir backend sistemleri, uygulamalı YZ/ML ve dağıtık mimariler üzerine çalışıyorum. Mikro servislerden ML modellerine, IEEE yayınlarına kadar — üreten birisiyim.",
+            "stat-internships": "staj",
+            "stat-projects": "proje",
+            "stat-paper": "IEEE makale",
+            "about-title": "Hakkımda",
+            "about-p1": "<strong>Ankara Üniversitesi</strong> Yazılım Mühendisliği bölümü öğrencisiyim (GNO 3.25/4.00, mezuniyet 2027). Ölçeklenebilir backend sistemleri geliştirme ve gerçek dünya problemlerine YZ/ML uygulama konularında tutkuluyum.",
+            "about-p2": "Çalışmalarım; Spring tabanlı mikro servis mimarileri, PyTorch destekli derin öğrenme modelleri ve full-stack web uygulamalarını kapsıyor. <strong>Turkcell</strong>, <strong>GreyCollar</strong> ve araştırma laboratuvarlarında üretime hazır kod geliştirdim.",
+            "about-p3": "<strong>TEKNOFEST 2025</strong>'te 5G Konumlandırma yarışmasında ekibimizle Türkiye 3.'sü olduk ve <strong>IEEE</strong>'de makale yayımladık.",
+            "edu-title": "Eğitim",
+            "edu-degree": "Lisans, Yazılım Mühendisliği",
+            "exp-title": "Deneyim",
+            "exp1-role": "Yazılım Mühendisi Stajyeri",
+            "exp1-loc": "İstanbul, Türkiye",
+            "exp1-b1": "Mikro servis ortamları için Oracle DB tabanlı merkezi konfigürasyon sunucusu kuruldu; dosya bağımlılığı ortadan kaldırıldı.",
+            "exp1-b2": "Uygulamaları yeniden başlatmadan konfigürasyon değişikliklerini tüm mikro servislere anlık ileten asenkron push-based mekanizma tasarlandı.",
+            "exp2-role": "Yazılım Mühendisi Stajyeri",
+            "exp2-loc": "Uzaktan · Georgia, ABD",
+            "exp2-b1": "İş gücü yönetimi için otonom YZ ajan platformunda test senaryoları tasarlandı ve uygulandı.",
+            "exp2-b2": "LLM tabanlı sistem çıktı tutarlılığı ölçüldü, performans raporlama süreçlerine katkı sağlandı.",
+            "exp2-b3": "Olay güdümlü mimariler ve gerçek zamanlı veri akışı prensipleri üzerine deneyim kazanıldı.",
+            "exp3-role": "Teknik Ekip Sorumlusu",
+            "exp3-loc": "Ankara, Türkiye",
+            "exp3-b1": "Topluluk teknik süreçleri yönetildi; etkinlik altyapısı ve sunum sistemleri kurulumu yürütüldü.",
+            "exp3-b2": "Dijital içerik yönetimi ve etkinlik koordinasyonunda aktif rol alındı.",
+            "exp4-role": "Yazılım Mühendisi Stajyeri",
+            "exp4-loc": "Uzaktan · Ankara, Türkiye",
+            "exp4-b1": "Kullanıcı etkileşimini artırmak için modüler web bileşenleri geliştirildi.",
+            "exp4-b2": "Farklı ekran boyutlarında tutarlı ve duyarlı kullanıcı deneyimi sağlandı.",
+            "tag-leadership": "Liderlik",
+            "tag-techman": "Teknik Yönetim",
+            "proj-title": "Projeler",
+            "badge-featured": "Öne Çıkan",
+            "badge-live": "Canlı",
+            "badge-research": "Araştırma",
+            "p1-title": "Spring Cloud Config — Oracle DB Demo",
+            "p1-desc": "Mikro servisler için kurumsal düzeyde merkezi konfigürasyon yönetimi. Asenkron push-based yenileme mekanizması, değişiklikleri tüm servislere yeniden başlatmadan iletir. Turkcell stajında geliştirildi.",
+            "p2-desc": "YZ destekli CV kişiselleştirme platformu. Semantik arama, aday deneyimini iş ilanlarıyla eşleştirir. LangChain pipeline'ı özelleştirilmiş CV metni üretir. Canlıda.",
+            "p3-desc": "Ankara Üniversitesi bünyesinde çok disiplinli klinik odyometri projesi. Java tabanlı klinik yazılım ile Arduino/Proteus donanım katmanı arasında seri haberleşme protokolü.",
+            "p4-desc": "Kurban alım-satımı, mesajlaşma ve veteriner randevu özellikleri sunan full-stack marketplace. Rol tabanlı yetkilendirme, öneri motoru, AWS Lightsail ve CI/CD pipeline.",
+            "p5-title": "ML-IDS — Ağ Saldırı Tespiti",
+            "p5-desc": "Ağ trafiği üzerinden anomali ve siber saldırı tespiti. XGBoost, CatBoost ve CNN-LSTM modelleri Precision-Recall ve F1-Score metrikleriyle değerlendirildi.",
+            "rank-1st": "Birincilik",
+            "rank-3rd": "Üçüncülük",
+            "pub-title": "Yayınlar & Yarışmalar",
+            "ieee-title": "5G Konumlandırma için Hibrit Derin Öğrenme: Harita Tabanlı Çevresel Özelliklerle GAT-GRU-Attention Entegrasyonu",
+            "ieee-desc": "Harita tabanlı engel skoru özniteliğini GAT-GRU-Attention (GGA) hibrit modeline entegre eden uçtan uca 5G konumlandırma mimarisi. Açık alan senaryolarında <strong>R² = 0.9805</strong> ve <strong>21.26 m MAE</strong> elde edildi.",
+            "c1-desc": "\"5Gordion\" takımı üyesi olarak ulusal düzeyde yarışıldı. 5G sinyal ölçümleri ve harita tabanlı verilerle yüksek hassasiyetli konumlandırma yapan GAT-GRU-Attention hibrit modeli geliştirildi.",
+            "c1-org": "T.C. Sanayi ve Teknoloji Bakanlığı · Eylül 2025",
+            "skills-title": "Yetenekler",
+            "sk-languages": "Programlama Dilleri",
+            "sk-backend": "Backend & Framework'ler",
+            "sk-databases": "Veritabanları",
+            "sk-langs": "Yabancı Diller",
+            "lang-tr": "Türkçe",
+            "lang-en": "İngilizce",
+            "lang-native": "Anadil",
+            "contact-title": "İletişim",
+            "contact-headline": "Birlikte harika şeyler yapalım.",
+            "contact-sub": "Bir iş birliği, staj teklifi veya sadece bir merhaba — mesaj kutusum açık.",
+            "footer": "Tasarlandı & kodlandı by Efekan Çelik · 2026",
+            "typed-roles": ["Yazılım Mühendisi", "Backend Geliştirici", "YZ/ML Tutkunu", "IEEE Yazarı", "Açık Kaynak Katkıcısı"]
+        }
+    };
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
+    let currentLang = localStorage.getItem('lang') || 'en';
+    let currentTheme = localStorage.getItem('theme') || 'dark';
 
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
+    // ── THEME ─────────────────────────────────────────────────────────────────
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        const icon = document.getElementById('theme-icon');
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        localStorage.setItem('theme', theme);
+        currentTheme = theme;
+    }
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    // ── LANGUAGE ──────────────────────────────────────────────────────────────
+    let typedRoles = translations[currentLang]['typed-roles'];
+    let roleIdx = 0, charIdx = 0, deleting = false;
+    const typedEl = document.getElementById('typed-text');
+    let typingTimer;
+
+    function resetTyping(lang) {
+        typedRoles = translations[lang]['typed-roles'];
+        roleIdx = 0; charIdx = 0; deleting = false;
+        clearTimeout(typingTimer);
+        typedEl.textContent = '';
+        type();
+    }
+
+    function type() {
+        const current = typedRoles[roleIdx];
+        if (!deleting) {
+            typedEl.textContent = current.substring(0, charIdx + 1);
+            charIdx++;
+            if (charIdx === current.length) { deleting = true; typingTimer = setTimeout(type, 1800); return; }
+        } else {
+            typedEl.textContent = current.substring(0, charIdx - 1);
+            charIdx--;
+            if (charIdx === 0) { deleting = false; roleIdx = (roleIdx + 1) % typedRoles.length; }
+        }
+        typingTimer = setTimeout(type, deleting ? 50 : 90);
+    }
+
+    function applyLang(lang) {
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('data-lang', lang);
+        const t = translations[lang];
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) el.innerHTML = t[key];
         });
+        document.querySelector('.lang-label').textContent = lang === 'en' ? 'TR' : 'EN';
+        document.title = lang === 'tr' ? 'Efekan Çelik | Yazılım Mühendisi' : 'Efekan Çelik | Software Engineer';
+        localStorage.setItem('lang', lang);
+        currentLang = lang;
+        resetTyping(lang);
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+        applyLang(currentLang === 'en' ? 'tr' : 'en');
+    });
+
+    // ── INIT ──────────────────────────────────────────────────────────────────
+    applyTheme(currentTheme);
+    applyLang(currentLang);
+
+    // ── HAMBURGER ─────────────────────────────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('active'); });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => { hamburger.classList.remove('active'); navLinks.classList.remove('active'); });
+    });
+
+    // ── SCROLL OBSERVER ───────────────────────────────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.glass-card, .timeline-item, .pub-card, .comp-card').forEach(el => {
+        el.classList.add('fade-up'); observer.observe(el);
+    });
+
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
     </script>
 </body>
-
 </html>
