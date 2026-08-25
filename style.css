@@ -149,13 +149,24 @@ body {
     0%,100% { opacity: 0.5; transform: translate(-50%,-50%) scale(1); }
     50% { opacity: 1; transform: translate(-50%,-50%) scale(1.08); }
 }
+.profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 2px solid var(--glass-border-h);
+    box-shadow: var(--shadow-card), var(--shadow-glow);
+    position: relative;
+    z-index: 1;
+    transition: border-color 0.4s;
+}
 .engineer-avatar-card {
-    width: 250px;
-    padding: 1rem;
+    width: 220px;
+    padding: 0.8rem;
     position: relative;
     z-index: 1;
     border: 1px solid var(--glass-border-h);
-    box-shadow: var(--shadow-card), var(--shadow-glow);
+    box-shadow: var(--shadow-card);
 }
 .eac-header { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--glass-border); }
 .eac-dot { width: 8px; height: 8px; border-radius: 50%; }
