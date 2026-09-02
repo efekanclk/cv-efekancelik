@@ -44,25 +44,40 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Efekan Çelik",
-      "alternateName": "Efekan Celik",
-      "url": "https://efekancelik.com",
-      "image": "https://efekancelik.com/linkedinpp.jpeg",
-      "sameAs": [
-        "https://github.com/efekanclk",
-        "https://linkedin.com/in/efekan-celik"
-      ],
-      "jobTitle": "Software Engineer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Ankara University"
-      },
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Ankara University"
-      },
-      "knowsAbout": ["Software Engineering", "Backend Development", "Spring Boot", "Python", "PyTorch", "Machine Learning", "Distributed Systems"]
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://efekancelik.com/#website",
+          "url": "https://efekancelik.com/",
+          "name": "Efekan Çelik",
+          "alternateName": ["efekancelik", "efekancelik.com", "Efekan"],
+          "publisher": {
+            "@id": "https://efekancelik.com/#person"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://efekancelik.com/#person",
+          "name": "Efekan Çelik",
+          "alternateName": ["Efekan Celik", "efekancelik", "Efekan"],
+          "url": "https://efekancelik.com",
+          "image": "https://efekancelik.com/linkedinpp.jpeg",
+          "sameAs": [
+            "https://github.com/efekanclk",
+            "https://linkedin.com/in/efekan-celik"
+          ],
+          "jobTitle": "Software Engineer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Ankara University"
+          },
+          "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Ankara University"
+          },
+          "knowsAbout": ["Software Engineering", "Backend Development", "Spring Boot", "Python", "PyTorch", "Machine Learning", "Distributed Systems"]
+        }
+      ]
     }
     </script>
 </head>
